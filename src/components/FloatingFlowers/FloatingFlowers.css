@@ -1,0 +1,86 @@
+.floating-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.floating-particle {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.08));
+}
+
+/* Flower Falling Animation */
+.flower-fall {
+  animation-name: flowerFallAnimation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Butterfly Rising Animation */
+.butterfly-rise {
+  animation-name: butterflyRiseAnimation;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes flowerFallAnimation {
+  0% {
+    top: -10%;
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.65;
+  }
+  90% {
+    opacity: 0.65;
+  }
+  100% {
+    top: 110%;
+    transform: translateX(100px) rotate(450deg);
+    opacity: 0;
+  }
+}
+
+@keyframes butterflyRiseAnimation {
+  0% {
+    top: 110%;
+    transform: translateX(0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  25% {
+    transform: translateX(-40px) rotate(-20deg) scale(1);
+  }
+  50% {
+    transform: translateX(50px) rotate(15deg) scale(0.9);
+  }
+  75% {
+    transform: translateX(-20px) rotate(-10deg) scale(1);
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    top: -10%;
+    transform: translateX(30px) rotate(10deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-particle {
+    font-size: 20px !important;
+  }
+}

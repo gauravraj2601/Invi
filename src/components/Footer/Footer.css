@@ -1,0 +1,91 @@
+.footer-container {
+  width: 100%;
+  padding: 60px 20px 50px;
+  background: linear-gradient(180deg, var(--background, #FFEFD5) 0%, #fae6c6 100%);
+  border-top: 1px solid rgba(196, 154, 58, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+}
+
+.footer-logo-box {
+  margin-bottom: 12px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 4px 10px rgba(196, 154, 58, 0.2));
+  opacity: 0.9;
+}
+
+.footer-names {
+  font-family: 'Rozha One', 'Tiro Devanagari Hindi', serif;
+  font-size: 2rem;
+  color: var(--maroon, #7A1728);
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.footer-blessing {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold-dark, #8E6A1B);
+  margin-bottom: 14px;
+}
+
+.footer-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gold, #C49A3A);
+  margin-bottom: 16px;
+}
+
+.footer-divider .flourish {
+  font-size: 1.2rem;
+  color: var(--gold-light, #DDBB68);
+}
+
+.footer-divider .star {
+  font-size: 0.9rem;
+}
+
+.footer-date-venue {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--brown, #43352D);
+  margin-bottom: 8px;
+}
+
+.footer-welcome-note {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #6a5345;
+  margin-bottom: 18px;
+}
+
+.footer-shloka {
+  font-family: 'Rozha One', 'Tiro Devanagari Hindi', serif;
+  font-size: 1.15rem;
+  color: var(--maroon, #7A1728);
+  background: rgba(255, 255, 255, 0.6);
+  padding: 8px 24px;
+  border-radius: 20px;
+  border: 1px dashed rgba(196, 154, 58, 0.4);
+}
+
