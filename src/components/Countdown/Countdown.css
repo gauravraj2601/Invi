@@ -1,0 +1,308 @@
+/* ==========================================================================
+   COUNTDOWN & SCRATCH CARD SECTION (RESPONSIVE & ENGLISH TYPOGRAPHY)
+   ========================================================================== */
+
+.countdown-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 20px;
+  background-color: var(--cream, #FFF8EF);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.countdown-section .section-header {
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 30px auto;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-section .section-subtitle {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.2rem;
+  color: var(--gold, #C49A3A);
+  display: block;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.countdown-section .section-title {
+  font-family: "Cinzel", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--brown, #43352D);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Outer Box: 100% Responsive Centered Container */
+.countdown-container-outer {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  min-height: 270px;
+  margin: 20px auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* Scratch Overlay Layer */
+.scratch-overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  touch-action: none; /* Disable default dragging on mobile while scratching */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scratch-canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(196, 154, 58, 0.25);
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='fill:gold'><circle cx='16' cy='16' r='12'/></svg>") 16 16, pointer;
+  transition: opacity 0.8s ease-out;
+  display: block;
+  touch-action: none;
+}
+
+/* Revealed Content Styling */
+.revealed-content {
+  width: 100%;
+  opacity: 0.1;
+  transform: scale(0.95);
+  filter: blur(4px);
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), 
+              transform 1s cubic-bezier(0.22, 1, 0.36, 1), 
+              filter 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.revealed-content.revealed-active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.reveal-date-card {
+  width: 100%;
+  background-color: var(--white, #ffffff);
+  border: 1px solid rgba(196, 154, 58, 0.35);
+  border-radius: 18px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.reveal-date-card::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border: 1px solid var(--gold, #C49A3A);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.save-the-date-txt {
+  font-family: "Cinzel", serif;
+  font-size: 1.15rem;
+  letter-spacing: 3px;
+  color: var(--gold, #C49A3A);
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.wedding-date {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.8rem;
+  color: var(--rose, #C96D7A);
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  line-height: 1.2;
+}
+
+/* Countdown boxes */
+.countdown-timer {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.timer-box {
+  background-color: var(--white, #ffffff);
+  border: 1px solid rgba(196, 154, 58, 0.25);
+  border-radius: 16px;
+  width: 85px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition, 0.3s ease);
+}
+
+.timer-box:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196, 154, 58, 0.5);
+}
+
+.timer-number {
+  font-family: "Cinzel", serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--brown, #43352D);
+  line-height: 1;
+}
+
+.timer-label {
+  font-family: "Cinzel", "Cormorant Garamond", serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gold, #C49A3A);
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* Font helpers */
+.font-vibes {
+  font-family: "Great Vibes", cursive;
+}
+
+.font-cinzel {
+  font-family: "Cinzel", serif;
+}
+
+/* ==========================================================================
+   MOBILE & RESPONSIVE CONFIGURATIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .countdown-section {
+    padding: 60px 14px;
+  }
+
+  .countdown-section .section-title {
+    font-size: 2.1rem;
+  }
+
+  .countdown-section .section-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .countdown-container-outer {
+    max-width: 440px;
+    min-height: 250px;
+    margin: 15px auto;
+  }
+
+  .reveal-date-card {
+    padding: 20px 14px;
+  }
+
+  .wedding-date {
+    font-size: 2.3rem;
+  }
+
+  .countdown-timer {
+    gap: 10px;
+  }
+
+  .timer-box {
+    width: 72px;
+    height: 78px;
+  }
+
+  .timer-number {
+    font-size: 1.7rem;
+  }
+
+  .timer-label {
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .countdown-section {
+    padding: 50px 10px;
+  }
+
+  .countdown-container-outer {
+    max-width: 350px;
+    min-height: 230px;
+    margin: 10px auto;
+  }
+
+  .wedding-date {
+    font-size: 1.95rem;
+  }
+
+  .save-the-date-txt {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .countdown-timer {
+    gap: 8px;
+  }
+
+  .timer-box {
+    width: 64px;
+    height: 72px;
+    border-radius: 12px;
+  }
+
+  .timer-number {
+    font-size: 1.45rem;
+  }
+
+  .timer-label {
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+  }
+}

@@ -1,0 +1,255 @@
+/* ==========================================================================
+   VENUE MAP SECTION (WHERE WE CELEBRATE)
+   ========================================================================== */
+
+.venue-map-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 24px 90px;
+  background: linear-gradient(180deg, #F0F6FA 0%, #E5F1F8 50%, #F0F6FA 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Background ambient light */
+.venue-map-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(196, 154, 58, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(196, 154, 58, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.venue-header {
+  text-align: center;
+  max-width: 820px;
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+.venue-top-label {
+  display: block;
+  font-family: 'Cinzel', 'Noto Serif Devanagari', 'Rozha One', serif;
+  font-size: 1.45rem;
+  letter-spacing: 3px;
+  color: var(--gold-dark, #8E6A1B);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(142, 106, 27, 0.12);
+}
+
+.venue-main-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.2rem;
+  color: var(--maroon, #7A1728);
+  margin: 0 0 10px;
+  line-height: 1.15;
+  text-shadow: 0 2px 4px rgba(122, 23, 40, 0.06);
+}
+
+.venue-address-box {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.venue-name-hi {
+  font-family: 'Rozha One', 'Tiro Devanagari Hindi', serif;
+  font-size: 1.55rem;
+  color: var(--maroon, #7A1728);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.venue-full-address {
+  font-family: 'Mukta', 'Noto Serif Devanagari', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--brown, #43352D);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.venue-full-address .marker-icon {
+  color: var(--maroon, #7A1728);
+  font-size: 1.1rem;
+}
+
+.venue-full-address-hi {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.05rem;
+  color: #634f43;
+}
+
+/* Map Frame Outer */
+.map-frame-wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 10px auto 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.map-frame-outer {
+  width: 100%;
+  height: 440px;
+  background: #FFFDF9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 18px 45px rgba(67, 53, 45, 0.12),
+    0 3px 14px rgba(196, 154, 58, 0.18);
+  border: 2px solid rgba(196, 154, 58, 0.45);
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.map-frame-outer:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 24px 55px rgba(67, 53, 45, 0.18),
+    0 5px 20px rgba(196, 154, 58, 0.25);
+}
+
+.google-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Get Directions Button (Matches Reference Screenshot Pill Button) */
+.directions-action-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #C49A3A 0%, #A87920 100%);
+  color: #ffffff !important;
+  font-family: 'Mukta', 'Noto Serif Devanagari', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 13px 36px;
+  border-radius: 35px;
+  box-shadow: 0 8px 22px rgba(168, 121, 32, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.directions-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, #d4af37 0%, #b8861e 100%);
+  box-shadow: 0 12px 28px rgba(168, 121, 32, 0.45);
+  color: #ffffff;
+}
+
+.directions-btn .btn-icon {
+  font-size: 1rem;
+  transform: rotate(-15deg);
+  transition: transform 0.3s ease;
+}
+
+.directions-btn:hover .btn-icon {
+  transform: rotate(0deg) scale(1.1);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 768px) {
+  .venue-map-section {
+    padding: 60px 16px 70px;
+  }
+
+  .venue-top-label {
+    font-size: 1.25rem;
+    letter-spacing: 2.2px;
+  }
+
+  .venue-main-title {
+    font-size: 3.2rem;
+  }
+
+  .venue-name-hi {
+    font-size: 1.35rem;
+  }
+
+  .venue-full-address {
+    font-size: 1rem;
+    text-align: center;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .map-frame-outer {
+    height: 340px;
+    border-radius: 16px;
+  }
+
+  .directions-btn {
+    padding: 11px 28px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .venue-top-label {
+    font-size: 1.12rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+
+  .venue-main-title {
+    font-size: 2.7rem;
+  }
+
+  .map-frame-outer {
+    height: 300px;
+  }
+
+  .venue-name-hi {
+    font-size: 1.25rem;
+  }
+
+  .venue-full-address {
+    font-size: 0.95rem;
+  }
+
+  .directions-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .venue-top-label {
+    font-size: 1.02rem;
+    letter-spacing: 1px;
+  }
+}
+

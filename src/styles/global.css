@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Mukta:wght@300;400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Yatra+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background, #FFEFD5);
+  font-family: 'Noto Serif Devanagari', 'Cormorant Garamond', serif;
+  overflow-x: hidden;
+  color: var(--brown, #43352D);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Custom royal scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fcedd8;
+}
+::-webkit-scrollbar-thumb {
+  background: #c49a3a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a97e25;
+}
+
+.invitation-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+}
