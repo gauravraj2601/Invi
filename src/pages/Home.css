@@ -1,0 +1,19 @@
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #FFEFD5;
+}
+
+.home:not(.opened) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home.opened {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
